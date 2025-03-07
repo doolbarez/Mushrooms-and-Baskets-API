@@ -1,0 +1,181 @@
+{
+    "info": {
+      "name": "Mushrooms and Baskets API",
+      "_postman_id": "example-id",
+      "description": "Коллекция запросов для тестирования FastAPI приложения",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+      {
+        "name": "Создание гриба",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"id\": 1,\n  \"name\": \"Белый гриб\",\n  \"edible\": true,\n  \"weight\": 200,\n  \"freshness\": true\n}"
+          },
+          "url": {
+            "raw": "http://localhost:8000/mushrooms",
+            "protocol": "http",
+            "host": [
+              "localhost"
+            ],
+            "port": "8000",
+            "path": [
+              "mushrooms"
+            ]
+          }
+        }
+      },
+      {
+        "name": "Обновление гриба",
+        "request": {
+          "method": "PUT",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"id\": 1,\n  \"name\": \"Опёнок\",\n  \"edible\": true,\n  \"weight\": 150,\n  \"freshness\": true\n}"
+          },
+          "url": {
+            "raw": "http://localhost:8000/mushrooms/1",
+            "protocol": "http",
+            "host": [
+              "localhost"
+            ],
+            "port": "8000",
+            "path": [
+              "mushrooms",
+              "1"
+            ]
+          }
+        }
+      },
+      {
+        "name": "Получение гриба",
+        "request": {
+          "method": "GET",
+          "header": [],
+          "url": {
+            "raw": "http://localhost:8000/mushrooms/1",
+            "protocol": "http",
+            "host": [
+              "localhost"
+            ],
+            "port": "8000",
+            "path": [
+              "mushrooms",
+              "1"
+            ]
+          }
+        }
+      },
+      {
+        "name": "Создание корзинки",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"id\": 1,\n  \"owner\": \"Иван\",\n  \"capacity\": 1000\n}"
+          },
+          "url": {
+            "raw": "http://localhost:8000/baskets",
+            "protocol": "http",
+            "host": [
+              "localhost"
+            ],
+            "port": "8000",
+            "path": [
+              "baskets"
+            ]
+          }
+        }
+      },
+      {
+        "name": "Добавление гриба в корзинку",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"mushroom_id\": 1\n}"
+          },
+          "url": {
+            "raw": "http://localhost:8000/baskets/1/mushrooms",
+            "protocol": "http",
+            "host": [
+              "localhost"
+            ],
+            "port": "8000",
+            "path": [
+              "baskets",
+              "1",
+              "mushrooms"
+            ]
+          }
+        }
+      },
+      {
+        "name": "Удаление гриба из корзинки",
+        "request": {
+          "method": "DELETE",
+          "header": [],
+          "url": {
+            "raw": "http://localhost:8000/baskets/1/mushrooms/1",
+            "protocol": "http",
+            "host": [
+              "localhost"
+            ],
+            "port": "8000",
+            "path": [
+              "baskets",
+              "1",
+              "mushrooms",
+              "1"
+            ]
+          }
+        }
+      },
+      {
+        "name": "Получение корзинки",
+        "request": {
+          "method": "GET",
+          "header": [],
+          "url": {
+            "raw": "http://localhost:8000/baskets/1",
+            "protocol": "http",
+            "host": [
+              "localhost"
+            ],
+            "port": "8000",
+            "path": [
+              "baskets",
+              "1"
+            ]
+          }
+        }
+      }
+    ]
+  }
+  
